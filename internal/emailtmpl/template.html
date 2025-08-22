@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <style></style>
+  </head>
+  <body>
+    <h1>Dear {{.Name}},</h1>
+    <p>
+      This is to confirm payment of witholding tax for
+      <strong>{{.Month}}</strong><br />
+      See details below:
+    </p>
+    <p>Beneficiary name: {{.Name}}</p>
+    <p>Beneficiary email: {{.Email}}</p>
+    <p>Amount: {{ fmtAmt .Amount }}</p>
+    <p>Beneficiary's TIN: {{.TINBeneficiary}}</p>
+    <p>Payer's TIN: {{.TINPayer}}</p>
+    <p>Serial Number: {{.SerialNo}}</p>
+    <p>Date: {{.Date}}</p>
+  </body>
+</html>
