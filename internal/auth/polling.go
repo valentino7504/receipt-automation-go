@@ -11,10 +11,10 @@ import (
 )
 
 const (
-	AuthorizationPending  = "authorization_pending"
-	AuthorizationDeclined = "authorization_declined"
-	BadVerificationCode   = "bad_verification_code"
-	ExpiredToken          = "expired_token"
+	authorizationPending  = "authorization_pending"
+	authorizationDeclined = "authorization_declined"
+	badVerificationCode   = "bad_verification_code"
+	expiredToken          = "expired_token"
 )
 
 func postRequest(uri, params string) (*UserToken, error) {
@@ -62,7 +62,7 @@ func pollEndpoint(ctx context.Context, uri string, interval int, params string) 
 			if token.Error == "" {
 				return token, nil
 			}
-			if token.Error == AuthorizationPending {
+			if token.Error == authorizationPending {
 				continue
 			}
 			fmt.Println("an error 1")
